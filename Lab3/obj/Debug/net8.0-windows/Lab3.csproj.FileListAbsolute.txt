@@ -1,0 +1,16 @@
+C:\Users\ThreeAi\Desktop\C#лабы\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.MainForm.resources
+C:\Users\ThreeAi\Desktop\C#лабы\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.csproj.GenerateResource.cache
+C:\Users\ThreeAi\Desktop\C#лабы\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ThreeAi\Desktop\C#лабы\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.AssemblyInfoInputs.cache
+C:\Users\ThreeAi\Desktop\C#лабы\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.AssemblyInfo.cs
+C:\Users\ThreeAi\Desktop\C#лабы\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.csproj.CoreCompileInputs.cache
+C:\Users\ThreeAi\Desktop\C#лабы\Lab3\Lab3\bin\Debug\net8.0-windows\Lab3.exe
+C:\Users\ThreeAi\Desktop\C#лабы\Lab3\Lab3\bin\Debug\net8.0-windows\Lab3.deps.json
+C:\Users\ThreeAi\Desktop\C#лабы\Lab3\Lab3\bin\Debug\net8.0-windows\Lab3.runtimeconfig.json
+C:\Users\ThreeAi\Desktop\C#лабы\Lab3\Lab3\bin\Debug\net8.0-windows\Lab3.dll
+C:\Users\ThreeAi\Desktop\C#лабы\Lab3\Lab3\bin\Debug\net8.0-windows\Lab3.pdb
+C:\Users\ThreeAi\Desktop\C#лабы\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.dll
+C:\Users\ThreeAi\Desktop\C#лабы\Lab3\Lab3\obj\Debug\net8.0-windows\refint\Lab3.dll
+C:\Users\ThreeAi\Desktop\C#лабы\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.pdb
+C:\Users\ThreeAi\Desktop\C#лабы\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.genruntimeconfig.cache
+C:\Users\ThreeAi\Desktop\C#лабы\Lab3\Lab3\obj\Debug\net8.0-windows\ref\Lab3.dll

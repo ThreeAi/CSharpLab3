@@ -1,0 +1,120 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ThreeAi\\Desktop\\C#\u043B\u0430\u0431\u044B\\Lab3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|c:\\users\\threeai\\desktop\\c#\u043B\u0430\u0431\u044B\\lab3\\lab3\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|solutionrelative:lab3\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|c:\\users\\threeai\\desktop\\c#\u043B\u0430\u0431\u044B\\lab3\\lab3\\figure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|solutionrelative:lab3\\figure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|c:\\users\\threeai\\desktop\\c#\u043B\u0430\u0431\u044B\\lab3\\lab3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|solutionrelative:lab3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|c:\\users\\threeai\\desktop\\c#\u043B\u0430\u0431\u044B\\lab3\\lab3\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|solutionrelative:lab3\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|C:\\Users\\ThreeAi\\Desktop\\C#\u043B\u0430\u0431\u044B\\Lab3\\lab3\\mainform.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|solutionrelative:lab3\\mainform.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|c:\\users\\threeai\\desktop\\c#\u043B\u0430\u0431\u044B\\lab3\\lab3\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|solutionrelative:lab3\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Figure.cs",
+              "DocumentMoniker": "C:\\Users\\ThreeAi\\Desktop\\C#\u043B\u0430\u0431\u044B\\Lab3\\Lab3\\Figure.cs",
+              "RelativeDocumentMoniker": "Lab3\\Figure.cs",
+              "ToolTip": "C:\\Users\\ThreeAi\\Desktop\\C#\u043B\u0430\u0431\u044B\\Lab3\\Lab3\\Figure.cs",
+              "RelativeToolTip": "Lab3\\Figure.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAwwC0AAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-18T22:16:48.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\ThreeAi\\Desktop\\C#\u043B\u0430\u0431\u044B\\Lab3\\Lab3\\MainForm.cs",
+              "RelativeDocumentMoniker": "Lab3\\MainForm.cs",
+              "ToolTip": "C:\\Users\\ThreeAi\\Desktop\\C#\u043B\u0430\u0431\u044B\\Lab3\\Lab3\\MainForm.cs",
+              "RelativeToolTip": "Lab3\\MainForm.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-18T18:22:15.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainForm.resx",
+              "DocumentMoniker": "C:\\Users\\ThreeAi\\Desktop\\C#\u043B\u0430\u0431\u044B\\Lab3\\Lab3\\MainForm.resx",
+              "RelativeDocumentMoniker": "Lab3\\MainForm.resx",
+              "ToolTip": "C:\\Users\\ThreeAi\\Desktop\\C#\u043B\u0430\u0431\u044B\\Lab3\\Lab3\\MainForm.resx",
+              "RelativeToolTip": "Lab3\\MainForm.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-03-18T18:22:08.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ThreeAi\\Desktop\\C#\u043B\u0430\u0431\u044B\\Lab3\\Lab3\\MainForm.Designer.cs",
+              "RelativeDocumentMoniker": "Lab3\\MainForm.Designer.cs",
+              "ToolTip": "C:\\Users\\ThreeAi\\Desktop\\C#\u043B\u0430\u0431\u044B\\Lab3\\Lab3\\MainForm.Designer.cs",
+              "RelativeToolTip": "Lab3\\MainForm.Designer.cs",
+              "ViewState": "AQIAAIIAAAAAAAAAAAAmwJEAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-18T18:21:55.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ThreeAi\\Desktop\\C#\u043B\u0430\u0431\u044B\\Lab3\\Lab3\\Program.cs",
+              "RelativeDocumentMoniker": "Lab3\\Program.cs",
+              "ToolTip": "C:\\Users\\ThreeAi\\Desktop\\C#\u043B\u0430\u0431\u044B\\Lab3\\Lab3\\Program.cs",
+              "RelativeToolTip": "Lab3\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-18T18:21:22.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\Users\\ThreeAi\\Desktop\\C#\u043B\u0430\u0431\u044B\\Lab3\\Lab3\\MainForm.cs",
+              "RelativeDocumentMoniker": "Lab3\\MainForm.cs",
+              "ToolTip": "C:\\Users\\ThreeAi\\Desktop\\C#\u043B\u0430\u0431\u044B\\Lab3\\Lab3\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "Lab3\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-18T18:21:10.543Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
