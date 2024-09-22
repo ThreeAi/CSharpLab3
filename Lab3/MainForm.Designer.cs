@@ -253,7 +253,7 @@
                 dialog.FormBorderStyle = FormBorderStyle.FixedDialog;
                 dialog.MaximizeBox = false;
                 dialog.MinimizeBox = false;
-                dialog.Size = new Size(150, 150);
+                dialog.Size = new Size(200, 150);
 
                 var colorPanelPoint = new Panel();
                 colorPanelPoint.Location = new Point(130, 10);
