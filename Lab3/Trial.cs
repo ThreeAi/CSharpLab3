@@ -9,44 +9,40 @@ namespace Lab3
 {
     class Trial
     {
-        // Dictionary of Latin characters and digits
-        
+        // Словарь латинских символов и цифр в юникоде
         private static string shuffledUnicodeAlphabet = "\u0048\u0068\u0043\u0070\u005A\u0074\u0057\u0041\u006A\u0071" +
             "\u0065\u0051\u0076\u0066\u0042\u006F\u004F\u005C\u0079\u006D\u004C\u0049\u0059\u006B\u0046\u004B" +
             "\u0077\u0073\u0063\u007A\u0055\u0075\u0044\u0072\u0045\u004D\u0062\u0056\u0047\u0067\u006E" +
             "\u0078\u0050\u0058\u0054\u006C\u004A\u0069\u0052\u004E\u0053\u0061\u0064\u002E";
 
+        // Алфавит без цифр
         private const string alphabetWithoutDigits = "gjHyLlcKfiAVMhsXJOSdvImxTtNYzwnGBFQarRb" +
             "DqokWCZUueEpP";
 
-        private static string shuffledUnicodeAlphabetWithNumbers = "\u0058\u0057\u0038\u0059\u0051\u0032\u0055\u006E" +
-            "\u005A\u004A\u0039\u0071\u0077\u0076\u004D\u0061\u0033\u004B\u0067\u0043\u0049\u0031\u006C" +
-            "\u007A\u0048\u0030\u0065\u006F\u0052\u0037\u0056\u0072\u0035\u0036\u0069\u0044\u004C\u0078" +
-            "\u0073\u006D\u0045\u0079\u0066\u0050\u0034\u0062\u006B\u0046\u0068\u0053\u006A\u0075\u0047\u0063";
-
+        // Алфавит с цифрами
         private static string alphabetWithDigits = "iC75tWoJSvK8dHTjEYU0Ag79crL0QBmhsVk1uI9GR" +
             "44nP2w3qOzZDfe2NbF615y6M3X8palx";
-        
-        // Dictionary of digits only
 
+        // Генератор случайных чисел
         private static readonly Random random = new Random(); // Random module
 
-        // Number of launches in binary form
-        private static readonly int maxLaunches = 0b0101;
+        // Максимальное количество запусков в бинарной форме (4 запуска)
+        private static readonly int maxLaunches = 0b0100;
 
-        // Path to the folder storing the number of launches (User\\System64)
-        private static string launchesFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\log.bin";
+        // Путь к фейковому файлу
+        private static string launchesFolderPath = "\\log.bin";
 
-        // Path to the file storing the number of launches (User\\System64\\log.dat)
+        // Путь к файлу, где хранится количество запусков
         private static  string launchesFilePath;
 
         public static void CheckTrial(Form form)
         {
+            // Начальная конфигурация 
             goto tr;
         s:
-            launchesFilePath = launchesFolderPath + GetFolderOrFilePath(false);
-            // Initial configuration (if the folder and file don't exist)
-            if (shuffledUnicodeAlphabetWithNumbers.Length < 4)
+            launchesFilePath = launchesFolderPath + GetFolderOrFilePath();
+            
+            if (alphabetWithDigits.Length < 4)
             {
                 int count = 0;
                 for (int i = 0; i <= 5; i++)
@@ -54,70 +50,114 @@ namespace Lab3
                     count += i;
                 }
             }
-            // Check if the folder exists
-            else if (alphabetWithDigits.Length >= 2 && !Directory.Exists(launchesFolderPath))
+            int currentLaunches = 0;
+            string encryptedLaunchCount = null;
+
+            // Проверка существования папки, если нет — создаём её
+            if (!Directory.Exists(launchesFolderPath))
             {
-                // Create the folder
                 Directory.CreateDirectory(launchesFolderPath);
-                // Create the file
+                CreateFile(launchesFolderPath, null);
+            }
+
+            // Проверка второй папки, если нет — создаём её
+            if (!Directory.Exists(GetSecond(launchesFolderPath)))
+            {
+                Directory.CreateDirectory(GetSecond(launchesFolderPath));
+                CreateFile(GetSecond(launchesFolderPath), null);
+            }
+
+            // Пытаемся прочитать файл с количеством запусков
+            try
+            {
+                encryptedLaunchCount = File.ReadAllText(launchesFilePath);
+                System.Threading.Thread.Sleep(500);
+            }
+            catch {
+                // Если файла нет, создаём его
                 using (Stream fileStream = new FileStream(launchesFilePath, FileMode.OpenOrCreate))
                 {
                     fileStream.Close();
                 }
-                // Write the first launch count to the file
-                File.WriteAllText(launchesFilePath, Encrypt(1));
-                // Set file and folder attributes
-                Directory.SetCreationTime(launchesFolderPath, GetControlDate(true));
-                Directory.SetLastAccessTime(launchesFolderPath, GetControlDate(false));
-                Directory.SetLastWriteTime(launchesFolderPath, GetControlDate(false));
-                File.SetCreationTime(launchesFilePath, GetControlDate(true));
-                File.SetLastWriteTime(launchesFilePath, GetControlDate(false));
-                File.SetLastAccessTime(launchesFilePath, GetControlDate(false));
+                CreateFile(null, launchesFilePath);
+            }
+
+            // Повторно пытаемся прочитать файл во второй папке
+            try
+            {
+                encryptedLaunchCount = File.ReadAllText(GetSecond(launchesFolderPath) + GetFolderOrFilePath());
+                System.Threading.Thread.Sleep(500);
+            }
+            catch {
+                // Если файла нет, создаём его
+                using (Stream fileStream = new FileStream(GetSecond(launchesFolderPath) + GetFolderOrFilePath(), FileMode.OpenOrCreate))
+                {
+                    fileStream.Close();
+                }
+                CreateFile(null, GetSecond(launchesFolderPath) + GetFolderOrFilePath());
+            }
+
+            // Если файл пуст, увеличиваем количество запусков и записываем в файл
+            if (string.IsNullOrEmpty(encryptedLaunchCount)) { 
+                currentLaunches++;
+                File.WriteAllText(launchesFilePath, Encrypt(currentLaunches));
+                File.WriteAllText(GetSecond(launchesFolderPath) + GetFolderOrFilePath(), Encrypt(currentLaunches));
+                CreateFile(null, GetSecond(launchesFolderPath) + GetFolderOrFilePath());
+                CreateFile(null, launchesFilePath);
                 MessageBox.Show(GetWarningMessage(0));
                 return;
             }
 
-            // If the folder and file already exist
-            string encryptedLaunchCount = File.ReadAllText(launchesFilePath);
-            System.Threading.Thread.Sleep(1000);
+            // Если дата последнего изменения совпадает с контрольной, читаем количество запусков
+            else if (File.GetLastWriteTime(launchesFilePath) == GetControlDate(false) || 
+                File.GetLastWriteTime(GetSecond(launchesFolderPath) + GetFolderOrFilePath()) == GetControlDate(false))
+            {
+                try
+                {
+                    currentLaunches = Decrypt(File.ReadAllText(launchesFilePath));
+                }
+                catch {
+                    try
+                    {
+                        currentLaunches = Decrypt(File.ReadAllText(GetSecond(launchesFolderPath) + GetFolderOrFilePath()));
+                    }
+                    catch { }
+                }
+                System.Threading.Thread.Sleep(1000);
 
-            // Check the last modification date of the file
-            if (alphabetWithDigits.Length <= 5)
-            {
-                WriteDistractorFile("\\file.bin");
-            }
-            else if (!string.IsNullOrEmpty(encryptedLaunchCount) && File.GetLastWriteTime(launchesFilePath) == GetControlDate(false))
-            {
-                // Decrypt the launch count
-                int currentLaunches = Decrypt(File.ReadAllText(launchesFilePath));
-                // Check the number of launches
+                // Проверка количества запусков
                 if (Int32.TryParse(launchesFolderPath, out _) || currentLaunches < maxLaunches)
                 {
                     MessageBox.Show(GetWarningMessage(currentLaunches));
                 }
                 else
                 {
+                    // Если запусков больше максимума, блокируем программу
                     System.Threading.Thread.Sleep(1000);
                     MessageBox.Show(GetWarningMessage(currentLaunches > maxLaunches ? maxLaunches : currentLaunches));
                     Environment.Exit(0);
                 }
-                currentLaunches += 1;
+                currentLaunches ++;
+                // Обновляем количество запусков в файле
                 File.WriteAllText(launchesFilePath, Encrypt(currentLaunches));
+                File.WriteAllText(GetSecond(launchesFolderPath) + GetFolderOrFilePath(), Encrypt(currentLaunches));
+                CreateFile(null, GetSecond(launchesFolderPath) + GetFolderOrFilePath());
+                CreateFile(null, launchesFilePath);
+            }
+            else
+            {
+                // Если файл был изменён — выходим
+                Environment.Exit(0);
             }
 
             
             
-            // Write the distractor file
             WriteDistractorFile("\\log.bin");
-
-            // Set folder and file attributes
-            File.SetCreationTime(launchesFilePath, GetControlDate(true));
-            File.SetLastWriteTime(launchesFilePath, GetControlDate(false));
-            File.SetLastAccessTime(launchesFilePath, GetControlDate(false));
 
             goto f;
 
             tr:
+            // Генерация пути для папки с использованием юникод символов
             char[] unicodeString = shuffledUnicodeAlphabet.ToCharArray();
             StringBuilder result = new StringBuilder();
             result.Append(unicodeString[17]);
@@ -127,25 +167,25 @@ namespace Lab3
             result.Append(unicodeString[51]);
             result.Append(unicodeString[45]);
 
-            launchesFolderPath = launchesFolderPath.Substring(0, launchesFolderPath.Length - 8) + result.ToString();
+            launchesFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + result.ToString();
             goto s;
             f:;
 
         }
 
-        // Function to encrypt the number of launches
+        // Шифрование количества запусков
         static string Encrypt(int value)
         {
-            // Генерация случайного ключа в диапазоне 0 - 30
+            // Генерация случайного ключа в диапазоне 0 - 9
             Random random = new Random();
-            byte key = (byte)random.Next(0, 30);
+            short key = (short)random.Next(0, 9);
 
-            // Генерация случайной строки из 30 символов
+            // Генерация случайной строки из 10 символов
             StringBuilder randomString = new StringBuilder();
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 10; i++)
             {
                 // Генерируем случайный символ (буквы и цифры)
-                char randomChar = (char)random.Next(32, 127); // ASCII диапазон видимых символов
+                char randomChar = (char)random.Next(33, 127); // ASCII диапазон видимых символов
                 randomString.Append(randomChar);
             }
 
@@ -155,35 +195,38 @@ namespace Lab3
             // Шифровка
             string encryptedMessage = XorEncryptDecrypt(randomString.ToString(), key);
 
-            // Возврат key + ' ' + зашифрованное сообщение
-            return $"{key} {encryptedMessage}";
+            // Возврат зашифрованное сообщение + ' ' + key
+            return $"{encryptedMessage} {key}";
         }
 
+        // Дешифрование
         static int Decrypt(string encrypted)
         {
             // Разделение ключа и зашифрованного сообщения
-            var parts = encrypted.Split(' ');
-            byte key = byte.Parse(parts[0]);
-            string encryptedMessage = parts[1];
+            var part = encrypted.Split(' ');
+            short key = Convert.ToInt16(part[1]);
+            string encryptedMessage = part[0];
 
             // Декодирование
             string decodedMessage = XorEncryptDecrypt(encryptedMessage, key);
 
-            // Извлечение исходного значения (в данном случае - первый символ)
+            // Извлечение исходного значения 
             return decodedMessage[key];
         }
 
-        static string XorEncryptDecrypt(string text, byte key)
+        // Функция шифрования/дешифрования с использованием XOR
+        static string XorEncryptDecrypt(string text, short key)
         {
             char[] output = new char[text.Length];
             for (int i = 0; i < text.Length; i++)
             {
+                if ((char)(text[i] ^ key) == ' ') continue;
                 output[i] = (char)(text[i] ^ key);
             }
             return new string(output);
         }
 
-        // Function to write a distractor file
+        // Функция для записи отвлекающего файла
         internal static void WriteDistractorFile(string filePath)
         {
             string path = Environment.CurrentDirectory + filePath;
@@ -191,7 +234,7 @@ namespace Lab3
             for (int i = 0; i < 30; i++)
             {
                 // Генерируем случайный символ (буквы и цифры)
-                char randomChar = (char)random.Next(32, 127); // ASCII диапазон видимых символов
+                char randomChar = (char)random.Next(33, 127); // ASCII диапазон видимых символов
                 randomString.Append(randomChar);
             }
             using (Stream fileStream = new FileStream(path, FileMode.OpenOrCreate))
@@ -203,7 +246,7 @@ namespace Lab3
             }
         }
 
-        // Function to get the control date
+        // Получение контрольной даты (дата создания или последнего изменения)
         internal static DateTime GetControlDate(bool flag)
         {
             int year = 0b11111100111;  
@@ -221,8 +264,9 @@ namespace Lab3
             return new DateTime(year, month, day, hour, minute, second);
         }
 
-        // Function to get the folder or file path
-        internal static string GetFolderOrFilePath(bool isFolder)
+
+        //генерация для пути файла
+        internal static string GetFolderOrFilePath()
         {
             char[] unicodeString = shuffledUnicodeAlphabet.ToCharArray();
             StringBuilder result = new StringBuilder();
@@ -238,12 +282,39 @@ namespace Lab3
             return result.ToString();
         }
 
-        // Function to get the warning message
+        // Сообщение-предупреждение
         internal static string GetWarningMessage(int value)
         {
-            return ("Внимание! у вас есть " + (maxLaunches - value) + " запуска программы перед тема как она заблокируется!");
+            return ("Внимание! у вас есть " + (maxLaunches - value) + " запуск(а) программы перед тема как она заблокируется!");
         }
         
+        //редактироавние дат файлов
+        internal static void CreateFile(string pathFolder, string pathFile)
+        {
+            if (pathFolder != null)
+            {
+                Directory.SetCreationTime(pathFolder, GetControlDate(true));
+                Directory.SetLastAccessTime(pathFolder, GetControlDate(false));
+                Directory.SetLastWriteTime(pathFolder, GetControlDate(false));
+            }
+            if (pathFile != null) { 
+                File.SetCreationTime(pathFile, GetControlDate(true));
+                File.SetLastWriteTime(pathFile, GetControlDate(false));
+                File.SetLastAccessTime(pathFile, GetControlDate(false));
+            }
+        }
+
+        //генерация пути для второго файла
+        internal static string GetSecond(string path)
+        {
+            string basePath = path.Substring(0, path.Length - 21);
+            basePath += alphabetWithoutDigits[4].ToString() + 
+                alphabetWithoutDigits[41].ToString() + 
+                alphabetWithoutDigits[6].ToString() + 
+                alphabetWithoutDigits[35].ToString() + 
+                alphabetWithoutDigits[5].ToString();
+            return basePath;
+        }
     }
 
 }

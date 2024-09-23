@@ -11,20 +11,20 @@
       "RelativeMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|solutionrelative:lab3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|c:\\users\\user\\visualstudioprojects\\lab3\\lab3\\lab3.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|solutionrelative:lab3\\lab3.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|c:\\users\\user\\visualstudioprojects\\lab3\\lab3\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|solutionrelative:lab3\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|c:\\users\\user\\visualstudioprojects\\lab3\\lab3\\figure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|solutionrelative:lab3\\figure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|c:\\users\\user\\visualstudioprojects\\lab3\\lab3\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|solutionrelative:lab3\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|c:\\users\\user\\visualstudioprojects\\lab3\\lab3\\lab3.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|solutionrelative:lab3\\lab3.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|c:\\users\\user\\visualstudioprojects\\lab3\\lab3\\figure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB2A4998-CBD0-4D11-AF80-2EF39185AF86}|Lab3\\Lab3.csproj|solutionrelative:lab3\\figure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,15 +42,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Lab3",
               "DocumentMoniker": "C:\\Users\\User\\VisualStudioProjects\\Lab3\\Lab3\\Lab3.csproj",
               "RelativeDocumentMoniker": "Lab3\\Lab3.csproj",
               "ToolTip": "C:\\Users\\User\\VisualStudioProjects\\Lab3\\Lab3\\Lab3.csproj",
               "RelativeToolTip": "Lab3\\Lab3.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-22T18:08:19.853Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-22T18:08:19.853Z"
             },
             {
               "$type": "Document",
@@ -60,47 +59,48 @@
               "RelativeDocumentMoniker": "Lab3\\Trial.cs",
               "ToolTip": "C:\\Users\\User\\VisualStudioProjects\\Lab3\\Lab3\\Trial.cs",
               "RelativeToolTip": "Lab3\\Trial.cs",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAgwKwAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAgwHwAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-22T13:03:40.849Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Figure.cs",
               "DocumentMoniker": "C:\\Users\\User\\VisualStudioProjects\\Lab3\\Lab3\\Figure.cs",
               "RelativeDocumentMoniker": "Lab3\\Figure.cs",
               "ToolTip": "C:\\Users\\User\\VisualStudioProjects\\Lab3\\Lab3\\Figure.cs",
               "RelativeToolTip": "Lab3\\Figure.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAAwC0AAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAcwC0AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-18T22:16:48.217Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "MainForm.cs",
               "DocumentMoniker": "C:\\Users\\User\\VisualStudioProjects\\Lab3\\Lab3\\MainForm.cs",
               "RelativeDocumentMoniker": "Lab3\\MainForm.cs",
               "ToolTip": "C:\\Users\\User\\VisualStudioProjects\\Lab3\\Lab3\\MainForm.cs",
               "RelativeToolTip": "Lab3\\MainForm.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwAgAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-18T18:22:15.65Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "MainForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\User\\VisualStudioProjects\\Lab3\\Lab3\\MainForm.Designer.cs",
               "RelativeDocumentMoniker": "Lab3\\MainForm.Designer.cs",
               "ToolTip": "C:\\Users\\User\\VisualStudioProjects\\Lab3\\Lab3\\MainForm.Designer.cs",
               "RelativeToolTip": "Lab3\\MainForm.Designer.cs",
-              "ViewState": "AgIAAN0AAAAAAAAAAAAuwAcBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T18:21:55.352Z"
+              "WhenOpened": "2024-03-18T18:21:55.352Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -110,7 +110,7 @@
               "RelativeDocumentMoniker": "Lab3\\Program.cs",
               "ToolTip": "C:\\Users\\User\\VisualStudioProjects\\Lab3\\Lab3\\Program.cs",
               "RelativeToolTip": "Lab3\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-18T18:21:22.876Z",
               "EditorCaption": ""
