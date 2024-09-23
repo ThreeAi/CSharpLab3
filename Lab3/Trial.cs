@@ -10,139 +10,139 @@ namespace Lab3
     class Trial
     {
         // Словарь латинских символов и цифр в юникоде
-        private static string shuffledUnicodeAlphabet = "\u0048\u0068\u0043\u0070\u005A\u0074\u0057\u0041\u006A\u0071" +
+        private static string lyTUjV = "\u0048\u0068\u0043\u0070\u005A\u0074\u0057\u0041\u006A\u0071" +
             "\u0065\u0051\u0076\u0066\u0042\u006F\u004F\u005C\u0079\u006D\u004C\u0049\u0059\u006B\u0046\u004B" +
             "\u0077\u0073\u0063\u007A\u0055\u0075\u0044\u0072\u0045\u004D\u0062\u0056\u0047\u0067\u006E" +
             "\u0078\u0050\u0058\u0054\u006C\u004A\u0069\u0052\u004E\u0053\u0061\u0064\u002E";
 
         // Алфавит без цифр
-        private const string alphabetWithoutDigits = "gjHyLlcKfiAVMhsXJOSdvImxTtNYzwnGBFQarRb" +
+        private const string mnevoF = "gjHyLlcKfiAVMhsXJOSdvImxTtNYzwnGBFQarRb" +
             "DqokWCZUueEpP";
 
         // Алфавит с цифрами
-        private static string alphabetWithDigits = "iC75tWoJSvK8dHTjEYU0Ag79crL0QBmhsVk1uI9GR" +
+        private static string bEAzQL = "iC75tWoJSvK8dHTjEYU0Ag79crL0QBmhsVk1uI9GR" +
             "44nP2w3qOzZDfe2NbF615y6M3X8palx";
 
         // Генератор случайных чисел
-        private static readonly Random random = new Random(); // Random module
+        private static readonly Random TTpRbg = new Random(); // Random module
 
         // Максимальное количество запусков в бинарной форме (4 запуска)
-        private static readonly int maxLaunches = 0b0100;
+        private static readonly int fkxpEd = 0b0100;
 
         // Путь к фейковому файлу
-        private static string launchesFolderPath = "\\log.bin";
+        private static string UhDmFN = "\\log.bin";
 
         // Путь к файлу, где хранится количество запусков
-        private static  string launchesFilePath;
+        private static  string CzpoAx;
 
         public static void CheckTrial(Form form)
         {
             // Начальная конфигурация 
             goto tr;
         s:
-            launchesFilePath = launchesFolderPath + GetFolderOrFilePath();
+            CzpoAx = UhDmFN + JoQAgY();
             
-            if (alphabetWithDigits.Length < 4)
+            if (bEAzQL.Length < 4)
             {
-                int count = 0;
+                int HLqeMK = 0;
                 for (int i = 0; i <= 5; i++)
                 {
-                    count += i;
+                    HLqeMK += i;
                 }
             }
-            int currentLaunches = 0;
-            string encryptedLaunchCount = null;
+            int YcgZUc = 0;
+            string LWdNzT = null;
 
             // Проверка существования папки, если нет — создаём её
-            if (!Directory.Exists(launchesFolderPath))
+            if (!Directory.Exists(UhDmFN))
             {
-                Directory.CreateDirectory(launchesFolderPath);
-                CreateFile(launchesFolderPath, null);
+                Directory.CreateDirectory(UhDmFN);
+                CEtYqH(UhDmFN, null);
             }
 
             // Проверка второй папки, если нет — создаём её
-            if (!Directory.Exists(GetSecond(launchesFolderPath)))
+            if (!Directory.Exists(xNtuOj(UhDmFN)))
             {
-                Directory.CreateDirectory(GetSecond(launchesFolderPath));
-                CreateFile(GetSecond(launchesFolderPath), null);
+                Directory.CreateDirectory(xNtuOj(UhDmFN));
+                CEtYqH(xNtuOj(UhDmFN), null);
             }
 
             // Пытаемся прочитать файл с количеством запусков
             try
             {
-                encryptedLaunchCount = File.ReadAllText(launchesFilePath);
+                LWdNzT = File.ReadAllText(CzpoAx);
                 System.Threading.Thread.Sleep(500);
             }
             catch {
                 // Если файла нет, создаём его
-                using (Stream fileStream = new FileStream(launchesFilePath, FileMode.OpenOrCreate))
+                using (Stream NNeScR = new FileStream(CzpoAx, FileMode.OpenOrCreate))
                 {
-                    fileStream.Close();
+                    NNeScR.Close();
                 }
-                CreateFile(null, launchesFilePath);
+                CEtYqH(null, CzpoAx);
             }
 
             // Повторно пытаемся прочитать файл во второй папке
             try
             {
-                encryptedLaunchCount = File.ReadAllText(GetSecond(launchesFolderPath) + GetFolderOrFilePath());
+                LWdNzT = File.ReadAllText(xNtuOj(UhDmFN) + JoQAgY());
                 System.Threading.Thread.Sleep(500);
             }
             catch {
                 // Если файла нет, создаём его
-                using (Stream fileStream = new FileStream(GetSecond(launchesFolderPath) + GetFolderOrFilePath(), FileMode.OpenOrCreate))
+                using (Stream cfICjJ = new FileStream(xNtuOj(UhDmFN) + JoQAgY(), FileMode.OpenOrCreate))
                 {
-                    fileStream.Close();
+                    cfICjJ.Close();
                 }
-                CreateFile(null, GetSecond(launchesFolderPath) + GetFolderOrFilePath());
+                CEtYqH(null, xNtuOj(UhDmFN) + JoQAgY());
             }
 
             // Если файл пуст, увеличиваем количество запусков и записываем в файл
-            if (string.IsNullOrEmpty(encryptedLaunchCount)) { 
-                currentLaunches++;
-                File.WriteAllText(launchesFilePath, Encrypt(currentLaunches));
-                File.WriteAllText(GetSecond(launchesFolderPath) + GetFolderOrFilePath(), Encrypt(currentLaunches));
-                CreateFile(null, GetSecond(launchesFolderPath) + GetFolderOrFilePath());
-                CreateFile(null, launchesFilePath);
-                MessageBox.Show(GetWarningMessage(0));
+            if (string.IsNullOrEmpty(LWdNzT)) { 
+                YcgZUc++;
+                File.WriteAllText(CzpoAx, qDahVS(YcgZUc));
+                File.WriteAllText(xNtuOj(UhDmFN) + JoQAgY(), qDahVS(YcgZUc));
+                CEtYqH(null, xNtuOj(UhDmFN) + JoQAgY());
+                CEtYqH(null, CzpoAx);
+                MessageBox.Show(SrACmY(0));
                 return;
             }
 
             // Если дата последнего изменения совпадает с контрольной, читаем количество запусков
-            else if (File.GetLastWriteTime(launchesFilePath) == GetControlDate(false) || 
-                File.GetLastWriteTime(GetSecond(launchesFolderPath) + GetFolderOrFilePath()) == GetControlDate(false))
+            else if (File.GetLastWriteTime(CzpoAx) == NNeScR(false) ||
+                File.GetLastWriteTime(xNtuOj(UhDmFN) + JoQAgY()) == NNeScR(false))
             {
                 try
                 {
-                    currentLaunches = Decrypt(File.ReadAllText(launchesFilePath));
+                    YcgZUc = HLqeMK(File.ReadAllText(CzpoAx));
                 }
                 catch {
                     try
                     {
-                        currentLaunches = Decrypt(File.ReadAllText(GetSecond(launchesFolderPath) + GetFolderOrFilePath()));
+                        YcgZUc = HLqeMK(File.ReadAllText(xNtuOj(UhDmFN) + JoQAgY()));
                     }
                     catch { }
                 }
                 System.Threading.Thread.Sleep(1000);
 
                 // Проверка количества запусков
-                if (Int32.TryParse(launchesFolderPath, out _) || currentLaunches < maxLaunches)
+                if (int.TryParse(UhDmFN, out _) || YcgZUc < fkxpEd)
                 {
-                    MessageBox.Show(GetWarningMessage(currentLaunches));
+                    MessageBox.Show(SrACmY(YcgZUc));
                 }
                 else
                 {
                     // Если запусков больше максимума, блокируем программу
                     System.Threading.Thread.Sleep(1000);
-                    MessageBox.Show(GetWarningMessage(currentLaunches > maxLaunches ? maxLaunches : currentLaunches));
+                    MessageBox.Show(SrACmY(YcgZUc > fkxpEd ? fkxpEd : YcgZUc));
                     Environment.Exit(0);
                 }
-                currentLaunches ++;
+                YcgZUc ++;
                 // Обновляем количество запусков в файле
-                File.WriteAllText(launchesFilePath, Encrypt(currentLaunches));
-                File.WriteAllText(GetSecond(launchesFolderPath) + GetFolderOrFilePath(), Encrypt(currentLaunches));
-                CreateFile(null, GetSecond(launchesFolderPath) + GetFolderOrFilePath());
-                CreateFile(null, launchesFilePath);
+                File.WriteAllText(CzpoAx, qDahVS(YcgZUc));
+                File.WriteAllText(xNtuOj(UhDmFN) + JoQAgY(), qDahVS(YcgZUc));
+                CEtYqH(null, xNtuOj(UhDmFN) + JoQAgY());
+                CEtYqH(null, CzpoAx);
             }
             else
             {
@@ -152,168 +152,168 @@ namespace Lab3
 
             
             
-            WriteDistractorFile("\\log.bin");
+            XZqfcD("\\log.bin");
 
             goto f;
 
             tr:
             // Генерация пути для папки с использованием юникод символов
-            char[] unicodeString = shuffledUnicodeAlphabet.ToCharArray();
-            StringBuilder result = new StringBuilder();
-            result.Append(unicodeString[17]);
-            result.Append(unicodeString[20]);
-            result.Append(unicodeString[15]);
-            result.Append(unicodeString[28]);
-            result.Append(unicodeString[51]);
-            result.Append(unicodeString[45]);
+            char[] MBYsSR = lyTUjV.ToCharArray();
+            StringBuilder XYSpFJ = new StringBuilder();
+            XYSpFJ.Append(MBYsSR[17]);
+            XYSpFJ.Append(MBYsSR[20]);
+            XYSpFJ.Append(MBYsSR[15]);
+            XYSpFJ.Append(MBYsSR[28]);
+            XYSpFJ.Append(MBYsSR[51]);
+            XYSpFJ.Append(MBYsSR[45]);
 
-            launchesFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + result.ToString();
+            UhDmFN = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + XYSpFJ.ToString();
             goto s;
             f:;
 
         }
 
         // Шифрование количества запусков
-        static string Encrypt(int value)
+        static string qDahVS(int zgagyM)
         {
             // Генерация случайного ключа в диапазоне 0 - 9
-            Random random = new Random();
-            short key = (short)random.Next(0, 9);
+            Random NLZCdA = new Random();
+            short mLXvmT = (short)NLZCdA.Next(0, 9);
 
             // Генерация случайной строки из 10 символов
-            StringBuilder randomString = new StringBuilder();
+            StringBuilder JoQAgY = new StringBuilder();
             for (int i = 0; i < 10; i++)
             {
                 // Генерируем случайный символ (буквы и цифры)
-                char randomChar = (char)random.Next(33, 127); // ASCII диапазон видимых символов
-                randomString.Append(randomChar);
+                char gubTcs = (char)NLZCdA.Next(33, 127); // ASCII диапазон видимых символов
+                JoQAgY.Append(gubTcs);
             }
 
             // Вставка value на позицию key
-            randomString[key] = Convert.ToChar(value); // Вставляем только первый символ value для примера
+            JoQAgY[mLXvmT] = Convert.ToChar(zgagyM); // Вставляем только первый символ value для примера
 
             // Шифровка
-            string encryptedMessage = XorEncryptDecrypt(randomString.ToString(), key);
+            string lyTUjV = YcgZUc(JoQAgY.ToString(), mLXvmT);
 
             // Возврат зашифрованное сообщение + ' ' + key
-            return $"{encryptedMessage} {key}";
+            return $"{lyTUjV} {mLXvmT}";
         }
 
         // Дешифрование
-        static int Decrypt(string encrypted)
+        static int HLqeMK(string mnevoF)
         {
             // Разделение ключа и зашифрованного сообщения
-            var part = encrypted.Split(' ');
-            short key = Convert.ToInt16(part[1]);
-            string encryptedMessage = part[0];
+            var bEAzQL = mnevoF.Split(' ');
+            short TTpRbg = Convert.ToInt16(bEAzQL[1]);
+            string fkxpEd = bEAzQL[0];
 
             // Декодирование
-            string decodedMessage = XorEncryptDecrypt(encryptedMessage, key);
+            string UhDmFN = YcgZUc(fkxpEd, TTpRbg);
 
             // Извлечение исходного значения 
-            return decodedMessage[key];
+            return UhDmFN[TTpRbg];
         }
 
         // Функция шифрования/дешифрования с использованием XOR
-        static string XorEncryptDecrypt(string text, short key)
+        static string YcgZUc(string LWdNzT, short udilWX)
         {
-            char[] output = new char[text.Length];
-            for (int i = 0; i < text.Length; i++)
+            char[] bjbmqh = new char[LWdNzT.Length];
+            for (int i = 0; i < LWdNzT.Length; i++)
             {
-                if ((char)(text[i] ^ key) == ' ') continue;
-                output[i] = (char)(text[i] ^ key);
+                if ((char)(LWdNzT[i] ^ udilWX) == ' ') continue;
+                bjbmqh[i] = (char)(LWdNzT[i] ^ udilWX);
             }
-            return new string(output);
+            return new string(bjbmqh);
         }
 
         // Функция для записи отвлекающего файла
-        internal static void WriteDistractorFile(string filePath)
+        internal static void XZqfcD(string eKepdE)
         {
-            string path = Environment.CurrentDirectory + filePath;
-            StringBuilder randomString = new StringBuilder();
+            string hVAxVp = Environment.CurrentDirectory + eKepdE;
+            StringBuilder PquEnd = new StringBuilder();
             for (int i = 0; i < 30; i++)
             {
                 // Генерируем случайный символ (буквы и цифры)
-                char randomChar = (char)random.Next(33, 127); // ASCII диапазон видимых символов
-                randomString.Append(randomChar);
+                char EWMeJv = (char)TTpRbg.Next(33, 127); // ASCII диапазон видимых символов
+                PquEnd.Append(EWMeJv);
             }
-            using (Stream fileStream = new FileStream(path, FileMode.OpenOrCreate))
+            using (Stream PAgCWQ = new FileStream(hVAxVp, FileMode.OpenOrCreate))
             {
-                string text = "8 " + randomString.ToString();
-                byte[] byteArray = System.Text.Encoding.ASCII.GetBytes(text);
-                fileStream.Write(byteArray, 0, byteArray.Length);
-                fileStream.Close();
+                string ZUZbPR = "8 " + PquEnd.ToString();
+                byte[] AtkSRo = System.Text.Encoding.ASCII.GetBytes(ZUZbPR);
+                PAgCWQ.Write(AtkSRo, 0, AtkSRo.Length);
+                PAgCWQ.Close();
             }
         }
 
         // Получение контрольной даты (дата создания или последнего изменения)
-        internal static DateTime GetControlDate(bool flag)
+        internal static DateTime NNeScR(bool cfICjJ)
         {
-            int year = 0b11111100111;  
-            int month = 0b1001;       
-            int day = 0b10110;         
-            int hour = 0b1110;       
-            int minute = 0b11110;     
-            int second = 0b0;
-            if (flag)
+            int MBYsSR = 0b11111100111;  
+            int XYSpFJ = 0b1001;       
+            int qDahVS = 0b10110;         
+            int zgagyM = 0b1110;       
+            int NLZCdA = 0b11110;     
+            int mLXvmT = 0b0;
+            if (cfICjJ)
             {
                 goto n;
             }
-            return new DateTime(year, month, day, hour, minute, second).AddMinutes(15);
+            return new DateTime(MBYsSR, XYSpFJ, qDahVS, zgagyM, NLZCdA, mLXvmT).AddMinutes(15);
             n:
-            return new DateTime(year, month, day, hour, minute, second);
+            return new DateTime(MBYsSR, XYSpFJ, qDahVS, zgagyM, NLZCdA, mLXvmT);
         }
 
 
         //генерация для пути файла
-        internal static string GetFolderOrFilePath()
+        internal static string JoQAgY()
         {
-            char[] unicodeString = shuffledUnicodeAlphabet.ToCharArray();
-            StringBuilder result = new StringBuilder();
-            result.Append(unicodeString[17]);
-            result.Append(unicodeString[45]);
-            result.Append(unicodeString[15]);
-            result.Append(unicodeString[39]);
-            result.Append(unicodeString[53]);
-            result.Append(unicodeString[52]);
-            result.Append(unicodeString[51]);
-            result.Append(unicodeString[5]);
+            char[] gubTcs = Trial.lyTUjV.ToCharArray();
+            StringBuilder lyTUjV = new StringBuilder();
+            lyTUjV.Append(gubTcs[17]);
+            lyTUjV.Append(gubTcs[45]);
+            lyTUjV.Append(gubTcs[15]);
+            lyTUjV.Append(gubTcs[39]);
+            lyTUjV.Append(gubTcs[53]);
+            lyTUjV.Append(gubTcs[52]);
+            lyTUjV.Append(gubTcs[51]);
+            lyTUjV.Append(gubTcs[5]);
 
-            return result.ToString();
+            return lyTUjV.ToString();
         }
 
         // Сообщение-предупреждение
-        internal static string GetWarningMessage(int value)
+        internal static string SrACmY(int xxqUGL)
         {
-            return ("Внимание! у вас есть " + (maxLaunches - value) + " запуск(а) программы перед тема как она заблокируется!");
+            return ("Внимание! у вас есть " + (fkxpEd - xxqUGL) + " запуск(а) программы перед тема как она заблокируется!");
         }
         
         //редактироавние дат файлов
-        internal static void CreateFile(string pathFolder, string pathFile)
+        internal static void CEtYqH(string cxhqxE, string JGoGCM)
         {
-            if (pathFolder != null)
+            if (cxhqxE != null)
             {
-                Directory.SetCreationTime(pathFolder, GetControlDate(true));
-                Directory.SetLastAccessTime(pathFolder, GetControlDate(false));
-                Directory.SetLastWriteTime(pathFolder, GetControlDate(false));
+                Directory.SetCreationTime(cxhqxE, NNeScR(true));
+                Directory.SetLastAccessTime(cxhqxE, NNeScR(false));
+                Directory.SetLastWriteTime(cxhqxE, NNeScR(false));
             }
-            if (pathFile != null) { 
-                File.SetCreationTime(pathFile, GetControlDate(true));
-                File.SetLastWriteTime(pathFile, GetControlDate(false));
-                File.SetLastAccessTime(pathFile, GetControlDate(false));
+            if (JGoGCM != null) { 
+                File.SetCreationTime(JGoGCM, NNeScR(true));
+                File.SetLastWriteTime(JGoGCM, NNeScR(false));
+                File.SetLastAccessTime(JGoGCM, NNeScR(false));
             }
         }
 
         //генерация пути для второго файла
-        internal static string GetSecond(string path)
+        internal static string xNtuOj(string yJBooC)
         {
-            string basePath = path.Substring(0, path.Length - 21);
-            basePath += alphabetWithoutDigits[4].ToString() + 
-                alphabetWithoutDigits[41].ToString() + 
-                alphabetWithoutDigits[6].ToString() + 
-                alphabetWithoutDigits[35].ToString() + 
-                alphabetWithoutDigits[5].ToString();
-            return basePath;
+            string CdtndB = yJBooC.Substring(0, yJBooC.Length - 21);
+            CdtndB += mnevoF[4].ToString() + 
+                mnevoF[41].ToString() + 
+                mnevoF[6].ToString() + 
+                mnevoF[35].ToString() + 
+                mnevoF[5].ToString();
+            return CdtndB;
         }
     }
 
