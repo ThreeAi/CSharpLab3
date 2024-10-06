@@ -17,7 +17,7 @@ namespace Lab3
 
         // Алфавит без цифр
         private const string mnevoF = "gjHyLlcKfiAVMhsXJOSdvImxTtNYzwnGBFQarRb" +
-            "DqokWCZUueEpP";
+            "DqokWCZUueEpP\\";
 
         // Алфавит с цифрами
         private static string bEAzQL = "iC75tWoJSvK8dHTjEYU0Ag79crL0QBmhsVk1uI9GR" +
@@ -53,18 +53,18 @@ namespace Lab3
             int YcgZUc = 0;
             string LWdNzT = null;
 
-            // Проверка существования папки, если нет — создаём её
-            if (!Directory.Exists(UhDmFN))
+            // Проверка папки, если нет — создаём её
+            try
             {
-                Directory.CreateDirectory(UhDmFN);
-                CEtYqH(UhDmFN, null);
+                if (!Directory.Exists(xNtuOj(UhDmFN)))
+                {
+                    Directory.CreateDirectory(xNtuOj(UhDmFN));
+                    CEtYqH(xNtuOj(UhDmFN), null);
+                }
             }
-
-            // Проверка второй папки, если нет — создаём её
-            if (!Directory.Exists(xNtuOj(UhDmFN)))
+            catch 
             {
-                Directory.CreateDirectory(xNtuOj(UhDmFN));
-                CEtYqH(xNtuOj(UhDmFN), null);
+                MessageBox.Show("Ошибка создания папки");
             }
 
             // Пытаемся прочитать файл с количеством запусков
@@ -74,12 +74,18 @@ namespace Lab3
                 System.Threading.Thread.Sleep(500);
             }
             catch {
-                // Если файла нет, создаём его
-                using (Stream NNeScR = new FileStream(CzpoAx, FileMode.OpenOrCreate))
-                {
+                try { 
+                    // Если файла нет, создаём его
+                    using (Stream NNeScR = new FileStream(CzpoAx, FileMode.OpenOrCreate))
+                    {
                     NNeScR.Close();
+                    }
+                    CEtYqH(null, CzpoAx);
                 }
-                CEtYqH(null, CzpoAx);
+                catch
+                {
+                    MessageBox.Show("Ошибка создания файла 1");
+                }
             }
 
             // Повторно пытаемся прочитать файл во второй папке
@@ -89,12 +95,19 @@ namespace Lab3
                 System.Threading.Thread.Sleep(500);
             }
             catch {
-                // Если файла нет, создаём его
-                using (Stream cfICjJ = new FileStream(xNtuOj(UhDmFN) + JoQAgY(), FileMode.OpenOrCreate))
+                try
                 {
-                    cfICjJ.Close();
+                    // Если файла нет, создаём его
+                    using (Stream cfICjJ = new FileStream(xNtuOj(UhDmFN) + JoQAgY(), FileMode.OpenOrCreate))
+                    {
+                        cfICjJ.Close();
+                    }
+                    CEtYqH(null, xNtuOj(UhDmFN) + JoQAgY());
                 }
-                CEtYqH(null, xNtuOj(UhDmFN) + JoQAgY());
+                catch
+                {
+                    MessageBox.Show("Ошибка создания файла 2");
+                }
             }
 
             // Если файл пуст, увеличиваем количество запусков и записываем в файл
@@ -121,12 +134,14 @@ namespace Lab3
                     {
                         YcgZUc = HLqeMK(File.ReadAllText(xNtuOj(UhDmFN) + JoQAgY()));
                     }
-                    catch { }
+                    catch {
+                        MessageBox.Show("Ошибка чтения");
+                    }
                 }
                 System.Threading.Thread.Sleep(1000);
 
                 // Проверка количества запусков
-                if (int.TryParse(UhDmFN, out _) || YcgZUc < fkxpEd)
+                if (int.TryParse(UhDmFN, out _) || Ndape(YcgZUc))
                 {
                     MessageBox.Show(SrACmY(YcgZUc));
                 }
@@ -135,7 +150,9 @@ namespace Lab3
                     // Если запусков больше максимума, блокируем программу
                     System.Threading.Thread.Sleep(1000);
                     MessageBox.Show(SrACmY(YcgZUc > fkxpEd ? fkxpEd : YcgZUc));
-                    Environment.Exit(0);
+                    foreach (Control c in form.Controls)
+                        c.Enabled = false;
+
                 }
                 YcgZUc ++;
                 // Обновляем количество запусков в файле
@@ -147,7 +164,8 @@ namespace Lab3
             else
             {
                 // Если файл был изменён — выходим
-                Environment.Exit(0);
+                foreach (Control c in form.Controls)
+                    c.Enabled = false;
             }
 
             
@@ -167,7 +185,7 @@ namespace Lab3
             XYSpFJ.Append(MBYsSR[51]);
             XYSpFJ.Append(MBYsSR[45]);
 
-            UhDmFN = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + XYSpFJ.ToString();
+            UhDmFN = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             goto s;
             f:;
 
@@ -224,6 +242,11 @@ namespace Lab3
                 bjbmqh[i] = (char)(LWdNzT[i] ^ udilWX);
             }
             return new string(bjbmqh);
+        }
+
+        static bool Ndape(int aBONe)
+        {
+            return aBONe < fkxpEd;
         }
 
         // Функция для записи отвлекающего файла
@@ -307,8 +330,9 @@ namespace Lab3
         //генерация пути для второго файла
         internal static string xNtuOj(string yJBooC)
         {
-            string CdtndB = yJBooC.Substring(0, yJBooC.Length - 21);
-            CdtndB += mnevoF[4].ToString() + 
+            string CdtndB = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            CdtndB += mnevoF[52].ToString() +
+                mnevoF[4].ToString() + 
                 mnevoF[41].ToString() + 
                 mnevoF[6].ToString() + 
                 mnevoF[35].ToString() + 

@@ -59,7 +59,7 @@
               "RelativeDocumentMoniker": "Lab3\\Trial.cs",
               "ToolTip": "C:\\Users\\User\\VisualStudioProjects\\Lab3\\Lab3\\Trial.cs",
               "RelativeToolTip": "Lab3\\Trial.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADsBAAAAAAAAAAAkwEEBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-22T13:03:40.849Z",
               "EditorCaption": ""
@@ -86,8 +86,7 @@
               "RelativeToolTip": "Lab3\\MainForm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T18:22:15.65Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-18T18:22:15.65Z"
             },
             {
               "$type": "Document",
@@ -99,8 +98,7 @@
               "RelativeToolTip": "Lab3\\MainForm.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T18:21:55.352Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-18T18:21:55.352Z"
             },
             {
               "$type": "Document",
@@ -112,8 +110,7 @@
               "RelativeToolTip": "Lab3\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T18:21:22.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-18T18:21:22.876Z"
             }
           ]
         }
